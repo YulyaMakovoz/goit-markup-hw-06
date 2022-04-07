@@ -246,6 +246,9 @@ border-radius: 2px;
   color: var(--brand-white-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  box-sizing: border-box;
+  width: 200px;
+height: 50px;
 
   cursor: pointer;
 
@@ -258,7 +261,7 @@ border-radius: 2px;
   letter-spacing: 0.06em;
 
   display: inline-block;
-  padding: 10px 32px;
+  
 
   transition: filter var(--animation);
 }
@@ -267,57 +270,7 @@ border-radius: 2px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
     drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
-/* Маодальное окно*/
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.2);
-  opacity: 1;
-  visibility: visible;
-  pointer-events: initial;
-  transition: opacity var(--animation), visibility var(--animation);
-  
-}
-.backdrop.is-hidden{
-opacity: 0;
-visibility: hidden;
-pointer-events: none;
-}
-.modal-wrapper{
-  position: absolute;
-  width: 528px;
-  height: 581px;
-  background-color: var(--background-page);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
-  0px 1px 1px rgba(0, 0, 0, 0.14),
-  0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.modal-button{
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  cursor: pointer;
-  
-  background-color: var(--background-page);
-   
-}
-.close{
-  display: inline-block;
-  text-align: center;
-  
-}
+
 
 /* Наши преимущества */
 .section.features {
@@ -664,10 +617,12 @@ fill: var(--background-page);
 }
 .block-follow{
   margin-left: 70px;
+  margin-right: 93px;
   padding-top: 12px;
   padding-bottom: 40px;
 }
 .follow{
+  display: inline-block;
 font-style: normal;
 font-size: 14px;
 line-height: 1.14;
@@ -740,6 +695,56 @@ margin-right: 10px;
   background-image: url(../images/linkedin.svg);
    background-color: rgba(255, 255, 255, 0.1);
 } */
+.icon-send{
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+ margin-left: 10px;
+}
+.subscribe-form{
+  /* display: flex; */
+  width: 358px;
+  height: 50px;
+  margin-right: 12px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  
+  align-items: center;
+  letter-spacing: 0.03em;
+  
+  color: rgba(255, 255, 255, 0.6);
+
+border: 1px solid rgba(255, 255, 255, 0.3);
+box-sizing: border-box;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+border-radius: 4px;
+background-color: transparent;
+}
+.subscribe-form[placeholder]{
+  padding-left: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  
+  align-items: center;
+  letter-spacing: 0.03em;
+  
+  color: rgba(255, 255, 255, 0.6);
+}
+.btn-subscribe{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.subscribe-box{
+ padding-top: 12px;
+ 
+}
+.subscribe-form-box{
+  display: flex;
+}
 
 
 
@@ -869,3 +874,146 @@ transform: translateY(100%);
 transition: transform var(--animation);
 
 }
+
+/* Маодальное окно*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+  transition: opacity var(--animation), visibility var(--animation);
+
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal-wrapper {
+  position: absolute;
+  width: 528px;
+  height: 581px;
+  padding: 40px;
+  background-color: var(--background-page);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+
+  background-color: var(--background-page);
+
+}
+
+.close {
+  display: inline-block;
+  text-align: center;
+
+}
+.form-text{
+font-weight: 700;
+font-size: 20px;
+line-height: 23px;
+text-align: center;
+letter-spacing: 0.03em;
+color: var(--brand-black-color);
+display: block;
+margin-bottom: 12px;
+}
+.form-field{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.form-field.last{
+margin-bottom: 0;
+}
+  .form-field label{
+    margin-bottom: 4px;
+    
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: var(--brand-grey-color);
+    
+    
+  }
+  .form-field input{
+    padding: 11px 42px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    box-sizing: border-box;
+    border-radius: 4px;
+    
+
+    
+  }
+  .form-field textarea{
+    /* display: inline-block; */
+    padding: 12px 16px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    box-sizing: border-box;
+    border-radius: 4px;
+    resize: none;
+    /* margin-bottom: 20px; */
+  }
+  .form-field textarea::placeholder{
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+
+    color: rgba(117, 117, 117, 0.5);
+  }
+  .politic{
+    display: inline-block;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--brand-grey-color);
+  margin-top: 20px;
+  margin-bottom: 30px;
+  }
+  .btn-form{
+    display: block;
+    margin: auto;
+  }
+
+.icon-form{
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+
+  position: absolute;
+  top: 70%;
+  left:12px;
+
+  transform: translateY(-70%);
+}
+.checkbox{
+  margin-right: 8px;
+  margin-left: 12px;
+}
+ 
+  
