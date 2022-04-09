@@ -1039,8 +1039,8 @@ outline: none;
   transform: translateY(-70%);
 }
 .checkbox{
-  margin-right: 8px;
-  margin-left: 12px;
+  
+  
   /* appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none; */
@@ -1060,13 +1060,30 @@ background-color: #2196f3; */
 
 
 
-background-origin:border-box
+/* background-origin:border-box */
 
-.checkbox-icon {
-  display: inline-block;
-  
-  fill: white;
-  stroke: var(--brand-blue-color);
+
+
+.checkbox-icon-box{
+ 
+display: flex;
+ border: 2px solid var(--brand-black-color);
+ width: 16px;
+ height: 15px;
+margin-right: 8px;
+margin-left: 12px;
+border-radius: 10%;
+justify-content: center;
+align-items: center;
+
 }
 
-
+.checkbox-icon{
+  display:inline-block;
+ 
+}
+.checkbox:checked + .checkbox-icon-box{
+  background-color: var(--brand-blue-color);
+  background-origin:border-box;
+  border-color: var(--brand-blue-color);
+}
